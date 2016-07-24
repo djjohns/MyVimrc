@@ -1,0 +1,1 @@
+/home/gingergiant/.vim/vimrc
