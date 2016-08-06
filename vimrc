@@ -1,3 +1,4 @@
+
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
 "                                                                              "
 "                       __   _ _ _ __ ___  _ __ ___                            "
@@ -91,19 +92,22 @@ set scrolloff=10                            " let 10 lines before/after cursor d
 
 set clipboard=unnamed                       " use system clipboard
 
-"split navigations
-nnoremap <C-J> <C-W><C-J>
+set colorcolumn=110                         " sets column to color to keep human readable format 
+
+
+nnoremap <C-J> <C-W><C-J>                   " Remaps <Ctrl + H,J,K,L> for window split navigation
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"sets tabspacing for other filetypes
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
 
-"Flags whitespace
+au BufNewFile,BufRead *.js, *.html, *.css   " Sets tabspacing for the following file types
+    \ set tabstop=2                         " .js for JavaScript
+    \ set softtabstop=2                     " .html
+    \ set shiftwidth=2                      " .css
+
+
+                                            "Flags whitespace to keep things tiddy
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "=====================================================
